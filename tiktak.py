@@ -37,16 +37,17 @@ class Player:
 
 class Game:
     def __init__(self):
-        pass
+        self.board = Board()
 
     @staticmethod
     def first_move():
         return random.randint(0, 1)
 
+    def next_move(self, new_position, mark):
+        self.board.positions[new_position] = mark
+
 
 if __name__ == '__main__':
-    board = Board()
-
     human_player = Player(input('Enter your nick -> '))
     ai_player = Player(human_mode=False)
 

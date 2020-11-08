@@ -35,6 +35,15 @@ class Player:
             print(f'You have to call Human init before .')
 
 
+class Game:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def first_move():
+        return random.randint(0, 1)
+
+
 if __name__ == '__main__':
     board = Board()
 

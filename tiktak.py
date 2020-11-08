@@ -21,9 +21,9 @@ class Player:
     def __init__(self, name='Human', human_mode=True):
         self.human_mode = human_mode
         self.name = name
-        self.set_marker()
+        self.set_mark()
 
-    def set_marker(self):
+    def set_mark(self):
         try:
             if self.human_mode:
                 while (tmp_marker := input('Enter your SIGN ( X or 0 ) -> ').upper()) not in ('0', 'X'):
@@ -34,6 +34,9 @@ class Player:
         except IndexError:
             print(f'You have to call Human init before .')
 
+    def get_mark(self):
+        return Player.marker[0] if self.human_mode else Player.marker[1]
+
 
 class Game:
     def __init__(self):
@@ -43,8 +46,11 @@ class Game:
     def first_move():
         return random.randint(0, 1)
 
-    def next_move(self, new_position, mark):
-        self.board.positions[new_position] = mark
+    def next_move(self, new_position, player):
+        self.board.positions[new_position] = player.get_mark()
+
+    def is_winner(self, player):
+        pass
 
 
 if __name__ == '__main__':

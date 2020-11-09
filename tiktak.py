@@ -39,6 +39,10 @@ class Player:
 
 
 class Game:
+    WIN_POSITIONS = [
+        [4, 5, 6], [1, 2, 3], [7, 4, 1], [8, 5, 2], [9, 6, 3], [7, 5, 3], [9, 5, 1]
+    ]
+
     def __init__(self):
         self.board = Board()
 
@@ -50,11 +54,11 @@ class Game:
         self.board.positions[new_position] = player.get_mark()
 
     def is_winner(self, player):
-        pass
+        for combination in self.WIN_POSITIONS:
+            if len(set(combination)) == 1: return True
+        return False
 
 
 if __name__ == '__main__':
     human_player = Player(input('Enter your nick -> '))
     ai_player = Player(human_mode=False)
-
-    board.redraw()

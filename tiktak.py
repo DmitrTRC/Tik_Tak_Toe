@@ -17,6 +17,9 @@ class Board:
     def copy(self):
         return self.positions.copy()
 
+    def is_free(self, pos):
+        return self.positions[pos] == ' '
+
 
 class Player:
     marker = ()

@@ -64,6 +64,10 @@ class Game:
             if len(set(combination)) == 1: return True
         return False
 
+    def engage_move(self):
+        while (move := int(input('Your next move ( 1-9) -> '))) not in range(1, 10) or not self.board.is_free(move):
+            print('Illegal move! Try again ...')
+
 
 if __name__ == '__main__':
     human_player = Player(input('Enter your nick -> '))

@@ -1,4 +1,6 @@
 import random
+from rich.console import Console
+from rich import traceback
 
 
 class Board:
@@ -25,6 +27,9 @@ class Board:
 
     def is_full(self):
         return True if ' ' not in set(self.positions) else False
+
+    def clear(self):
+        self.positions = [' ' for element in range(10)]
 
 
 class Player:
@@ -77,7 +82,9 @@ class Game:
         if not board:
             board = self.board
         for combination in self.WIN_POSITIONS:
-            if len(set([board.positions[item] for item in combination])) == 1: return True
+            seq = set([board.positions[item] for item in combination])
+            if (len(seq) == 1) and (' ' not in seq):
+                return True
         return False
 
     def engage_human_move(self):
@@ -99,14 +106,14 @@ class Game:
         for move in range(1, 10):
             tmp_board.set_board_positions(self.board.get_current_frame())
             if tmp_board.is_free(move):
-                self.set_move(move, self.ai_player, tmp_board)
+                self.set_move(move, tmp_board)
                 if self.is_winner(tmp_board):
                     return move
 
         for move in range(1, 10):
             tmp_board.set_board_positions(self.board.get_current_frame())
             if tmp_board.is_free(move):
-                self.set_move(move, self.human_player, tmp_board)
+                self.set_move(move, tmp_board)
                 if self.is_winner(tmp_board): return move
 
         if move := self.get_random_move([1, 3, 7, 9]): return move
@@ -152,8 +159,8 @@ class Game:
                             break
                         else:
                             self.turn = self.human_player
-            if not input('Play again ? ( y / n) ').lower().startswith('y'):
-                break
+            if input('Play again ? ( y / n) ').lower().startswith('y'):
+                self.board.clear()
 
 
 def main():
@@ -162,4 +169,6 @@ def main():
 
 
 if __name__ == '__main__':
+    traceback.install()
+    console = Console()
     main()

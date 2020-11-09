@@ -14,6 +14,9 @@ class Board:
         print(h_line)
         print(self.positions[1] + v_line + self.positions[2] + v_line + self.positions[3])
 
+    def copy(self):
+        return self.positions.copy()
+
 
 class Player:
     marker = ()

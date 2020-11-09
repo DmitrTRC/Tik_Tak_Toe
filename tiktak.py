@@ -68,6 +68,13 @@ class Game:
         while (move := int(input('Your next move ( 1-9) -> '))) not in range(1, 10) or not self.board.is_free(move):
             print('Illegal move! Try again ...')
 
+    def get_random_move(self, moves_arr):
+        legal_moves = []
+        for board_cell in moves_arr:
+            if self.board.is_free(board_cell):
+                legal_moves.append(board_cell)
+        return random.choice(legal_moves) if legal_moves else None
+
 
 if __name__ == '__main__':
     human_player = Player(input('Enter your nick -> '))

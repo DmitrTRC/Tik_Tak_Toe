@@ -23,13 +23,16 @@ class Board:
     def set_board_positions(self, pos_arr):
         self.positions = pos_arr
 
+    def is_full(self):
+        return True if ' ' not in set(self.positions) else False
+
 
 class Player:
     marker = ()
 
     def __init__(self, name='Human', human_mode=True):
         self.human_mode = human_mode
-        self.name = name
+        self.name = name if human_mode else 'Computer'
         self.set_mark()
 
     def set_mark(self):
@@ -56,15 +59,19 @@ class Game:
         self.board = Board()
         self.human_player = Player(input('Enter your nick -> '))
         self.ai_player = Player(human_mode=False)
+        self.turn = None
+        self.is_playing = False
 
-    @staticmethod
-    def first_move():
-        return random.randint(0, 1)
+    def first_move(self):
+        if random.randint(0, 1):
+            return self.ai_player
+        else:
+            return self.human_player
 
-    def set_move(self, new_position, player, board=None):
+    def set_move(self, new_position, board=None):
         if not board:
             board = self.board
-        board.positions[new_position] = player.get_mark()
+        board.positions[new_position] = self.turn.get_mark()
 
     def is_winner(self, board=None):
         if not board:
@@ -76,6 +83,7 @@ class Game:
     def engage_human_move(self):
         while (move := int(input('Your next move ( 1-9) -> '))) not in range(1, 10) or not self.board.is_free(move):
             print('Illegal move! Try again ...')
+        return move
 
     def get_random_move(self, moves_arr):
         legal_moves = []
@@ -108,7 +116,50 @@ class Game:
 
         return self.get_random_move([2, 4, 6, 8])
 
+    def loop(self):
+        while True:
+            self.turn = self.first_move()
+            print(f'{self.turn.name} moves first!')
+            self.is_playing = True
+            while self.is_playing:
+                if self.turn.human_mode:
+                    self.board.redraw()
+                    move = self.engage_human_move()
+                    self.set_move(move)
+                    if self.is_winner():
+                        self.board.redraw()
+                        print(f'Congrats! {self.turn.name} WON !!!')
+                        self.is_playing = False
+                    else:
+                        if self.board.is_full():
+                            self.board.redraw()
+                            print('O-o-ops! DRAW !!!')
+                            break
+                        else:
+                            self.turn = self.ai_player
+                else:
+                    move = self.engage_ai_move()
+                    self.set_move(move)
+                    if self.is_winner():
+                        self.board.redraw()
+                        print(f'{self.turn.name} WON !!!')
+                        self.is_playing = False
+
+                    else:
+                        if self.board.is_full():
+                            self.board.redraw()
+                            print('O-o-ops! DRAW !!!')
+                            break
+                        else:
+                            self.turn = self.human_player
+            if not input('Play again ? ( y / n) ').lower().startswith('y'):
+                break
+
+
+def main():
+    game = Game()
+    game.loop()
+
 
 if __name__ == '__main__':
-    human_player = Player(input('Enter your nick -> '))
-    ai_player = Player(human_mode=False)
+    main()

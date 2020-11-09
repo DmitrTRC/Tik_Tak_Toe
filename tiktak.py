@@ -9,12 +9,12 @@ class Board:
 
     def redraw(self):
         h_line = '---+---+---'
-        v_line = '  |'
-        print(self.positions[7] + v_line + self.positions[8] + v_line + self.positions[9])
+        v_line = '|'
+        print(f' {self.positions[7]} {v_line} {self.positions[8]} {v_line} {self.positions[9]}')
         print(h_line)
-        print(self.positions[4] + v_line + self.positions[5] + v_line + self.positions[6])
+        print(f' {self.positions[4]} {v_line} {self.positions[5]} {v_line} {self.positions[6]}')
         print(h_line)
-        print(self.positions[1] + v_line + self.positions[2] + v_line + self.positions[3])
+        print(f' {self.positions[1]} {v_line} {self.positions[2]} {v_line} {self.positions[3]}')
 
     def get_current_frame(self):
         return self.positions.copy()
@@ -161,6 +161,8 @@ class Game:
                             self.turn = self.human_player
             if input('Play again ? ( y / n) ').lower().startswith('y'):
                 self.board.clear()
+            else:
+                break
 
 
 def main():

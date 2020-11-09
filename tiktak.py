@@ -1,13 +1,20 @@
+import os
 import random
 from rich.console import Console
 from rich import traceback
+from subprocess import call
 
 
 class Board:
     def __init__(self):
         self.positions = [' ' for element in range(10)]
 
+    @staticmethod
+    def clear_screen():
+        _ = call('clear' if os.name == 'posix' else 'cls')
+
     def redraw(self):
+        self.clear_screen()
         h_line = '---+---+---'
         v_line = '|'
         print(f' {self.positions[7]} {v_line} {self.positions[8]} {v_line} {self.positions[9]}')
@@ -26,7 +33,7 @@ class Board:
         self.positions = pos_arr
 
     def is_full(self):
-        return True if ' ' not in set(self.positions) else False
+        return True if ' ' not in set(self.positions[1:9]) else False
 
     def clear(self):
         self.positions = [' ' for element in range(10)]
@@ -73,10 +80,12 @@ class Game:
         else:
             return self.human_player
 
-    def set_move(self, new_position, board=None):
+    def set_move(self, new_position, board=None, player=None):
         if not board:
             board = self.board
-        board.positions[new_position] = self.turn.get_mark()
+        if not player:
+            player = self.turn
+        board.positions[new_position] = player.get_mark()
 
     def is_winner(self, board=None):
         if not board:
@@ -113,8 +122,9 @@ class Game:
         for move in range(1, 10):
             tmp_board.set_board_positions(self.board.get_current_frame())
             if tmp_board.is_free(move):
-                self.set_move(move, tmp_board)
-                if self.is_winner(tmp_board): return move
+                self.set_move(move, tmp_board, self.human_player)
+                if self.is_winner(tmp_board):
+                    return move
 
         if move := self.get_random_move([1, 3, 7, 9]): return move
 
@@ -159,7 +169,9 @@ class Game:
                             break
                         else:
                             self.turn = self.human_player
-            if input('Play again ? ( y / n) ').lower().startswith('y'):
+            while (choice := input('Play again ? ( y / n) ').lower()) not in ('y', 'n'):
+                print(f'y/n possible answer.')
+            if choice == 'y':
                 self.board.clear()
             else:
                 break

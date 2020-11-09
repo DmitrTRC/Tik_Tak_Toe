@@ -14,11 +14,14 @@ class Board:
         print(h_line)
         print(self.positions[1] + v_line + self.positions[2] + v_line + self.positions[3])
 
-    def copy(self):
+    def get_current_frame(self):
         return self.positions.copy()
 
     def is_free(self, pos):
         return self.positions[pos] == ' '
+
+    def set_board_positions(self, pos_arr):
+        self.positions = pos_arr
 
 
 class Player:
@@ -51,20 +54,26 @@ class Game:
 
     def __init__(self):
         self.board = Board()
+        self.human_player = Player(input('Enter your nick -> '))
+        self.ai_player = Player(human_mode=False)
 
     @staticmethod
     def first_move():
         return random.randint(0, 1)
 
-    def next_move(self, new_position, player):
-        self.board.positions[new_position] = player.get_mark()
+    def set_move(self, new_position, player, board=None):
+        if not board:
+            board = self.board
+        board.positions[new_position] = player.get_mark()
 
-    def is_winner(self, player):
+    def is_winner(self, board=None):
+        if not board:
+            board = self.board
         for combination in self.WIN_POSITIONS:
-            if len(set(combination)) == 1: return True
+            if len(set([board.positions[item] for item in combination])) == 1: return True
         return False
 
-    def engage_move(self):
+    def engage_human_move(self):
         while (move := int(input('Your next move ( 1-9) -> '))) not in range(1, 10) or not self.board.is_free(move):
             print('Illegal move! Try again ...')
 
@@ -74,6 +83,30 @@ class Game:
             if self.board.is_free(board_cell):
                 legal_moves.append(board_cell)
         return random.choice(legal_moves) if legal_moves else None
+
+    # AI Implementation. Has to be refactored
+    def engage_ai_move(self):
+        tmp_board = Board()
+
+        for move in range(1, 10):
+            tmp_board.set_board_positions(self.board.get_current_frame())
+            if tmp_board.is_free(move):
+                self.set_move(move, self.ai_player, tmp_board)
+                if self.is_winner(tmp_board):
+                    return move
+
+        for move in range(1, 10):
+            tmp_board.set_board_positions(self.board.get_current_frame())
+            if tmp_board.is_free(move):
+                self.set_move(move, self.human_player, tmp_board)
+                if self.is_winner(tmp_board): return move
+
+        if move := self.get_random_move([1, 3, 7, 9]): return move
+
+        if self.board.is_free(5):
+            return 5
+
+        return self.get_random_move([2, 4, 6, 8])
 
 
 if __name__ == '__main__':

@@ -179,5 +179,4 @@ def main():
 
 if __name__ == '__main__':
     traceback.install()
-    console = Console()
     main()

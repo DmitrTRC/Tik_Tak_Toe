@@ -1,8 +1,14 @@
 import os
+import pyfiglet
 import random
 from rich.console import Console
 from rich import traceback
 from subprocess import call
+
+
+def game_banner():
+    ascii_banner = pyfiglet.figlet_format("Tic-Tac-Toe")
+    print(ascii_banner)
 
 
 class Board:
@@ -15,6 +21,7 @@ class Board:
 
     def redraw(self):
         self.clear_screen()
+        game_banner()
         h_line = '---+---+---'
         v_line = '|'
         print(f' {self.positions[7]} {v_line} {self.positions[8]} {v_line} {self.positions[9]}')
@@ -68,6 +75,7 @@ class Game:
     ]
 
     def __init__(self):
+        game_banner()
         self.board = Board()
         self.human_player = Player(input('Enter your nick -> '))
         self.ai_player = Player(human_mode=False)
@@ -108,7 +116,6 @@ class Game:
                 legal_moves.append(board_cell)
         return random.choice(legal_moves) if legal_moves else None
 
-    # AI Implementation. Has to be refactored
     def engage_ai_move(self):
         tmp_board = Board()
 

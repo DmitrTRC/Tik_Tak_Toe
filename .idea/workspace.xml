@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1069179c-5d55-4c58-8e51-1727adccdd05" name="Default Changelist" comment="" />
+    <list default="true" id="1069179c-5d55-4c58-8e51-1727adccdd05" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/tiktak.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiktak.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604837901285</updated>
       <workItem from="1604837902370" duration="23289000" />
-      <workItem from="1604951194270" duration="10236000" />
+      <workItem from="1604951194270" duration="10486000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit. Bard class defined with redraw method implemented.">
       <created>1604839068451</created>

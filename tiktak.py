@@ -143,7 +143,7 @@ class Game:
         else:
             if self.board.is_full():
                 self.board.redraw()
-                print('\nO-o-ops! DRAW !!!')
+                print('\nOps! DRAW !!!')
                 return False
             else:
                 return True

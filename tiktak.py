@@ -11,9 +11,12 @@ def game_banner():
     print(ascii_banner)
 
 
+condole = Console()
+
+
 class Board:
     def __init__(self):
-        self.positions = [' ' for element in range(10)]
+        self.positions = [' ' for _ in range(10)]
 
     @staticmethod
     def clear_screen():
@@ -43,7 +46,7 @@ class Board:
         return True if ' ' not in set(self.positions[1:9]) else False
 
     def clear(self):
-        self.positions = [' ' for element in range(10)]
+        self.positions = [' ' for _ in range(10)]
 
 
 class Player:
@@ -133,7 +136,8 @@ class Game:
                 if self.is_winner(tmp_board):
                     return move
 
-        if move := self.get_random_move([1, 3, 7, 9]): return move
+        if move := self.get_random_move([1, 3, 7, 9]):
+            return move
 
         if self.board.is_free(5):
             return 5

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1069179c-5d55-4c58-8e51-1727adccdd05" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="f1c5f7d3-4e9c-4066-bcb7-c6eb62ef1d8b" />
+  <component name="ProjectId" id="1k0WHaTabmEqUuk7ftI9K4vFhyf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="tiktak" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tik_Tak_Toe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tiktak.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tiktak" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1069179c-5d55-4c58-8e51-1727adccdd05" name="Default Changelist" comment="" />
+      <created>1604837901285</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604837901285</updated>
+      <workItem from="1604837902370" duration="23289000" />
+      <workItem from="1604951194270" duration="10236000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit. Bard class defined with redraw method implemented.">
+      <created>1604839068451</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604839068451</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Player class implementation. Started.&#10;Init : Done&#10;set_marker() : Done">
+      <created>1604855405772</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604855405772</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Game Class implementation&#10;first_move() : Done">
+      <created>1604855766797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604855766797</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Game Class.&#10;next_move() : Done">
+      <created>1604856428006</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604856428006</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Game Class.&#10;next_move() : refactored.">
+      <created>1604858378943</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604858378943</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Game Class.&#10;is_winner : Done">
+      <created>1604906917330</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604906917330</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Board class &#10;copy() : Done">
+      <created>1604907066483</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604907066483</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Board class &#10;is_free : Done">
+      <created>1604907566149</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604907566149</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Games class &#10;engage_move  : Done ( v1.0 )">
+      <created>1604908139175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604908139175</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Games class &#10;get_random_move() : Done">
+      <created>1604937365260</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604937365260</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Games class &#10;engage_ai_move() : Done&#10;some improvements">
+      <created>1604947126111</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604947126111</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Games class &#10;Main LOOP : Done&#10;some improvements&#10;First run.">
+      <created>1604950302661</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604950302661</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Board class &#10;Clear()  : Done&#10;some improvements">
+      <created>1604952171037</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604952171037</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Board class &#10;Redraw () : refactored">
+      <created>1604953740814</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604953740814</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Refactored: &#10;UI need corrections">
+      <created>1604957345113</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604957345113</updated>
+    </task>
+    <task id="LOCAL-00016" summary="GAME CLASS:&#10;Loop() : Refactored with turn_exec()">
+      <created>1604992864594</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604992864594</updated>
+    </task>
+    <task id="LOCAL-00017" summary="GAME CLASS:&#10;__turn_exec : Refactored">
+      <created>1604993335083</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1604993335083</updated>
+    </task>
+    <task id="LOCAL-00018" summary="First Demo version: 0.1">
+      <created>1604995530222</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604995530222</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit. Bard class defined with redraw method implemented." />
+    <MESSAGE value="Player class implementation. Started.&#10;Init : Done&#10;set_marker() : Done" />
+    <MESSAGE value="Game Class implementation&#10;first_move() : Done" />
+    <MESSAGE value="Game Class.&#10;next_move() : Done" />
+    <MESSAGE value="Game Class.&#10;next_move() : refactored." />
+    <MESSAGE value="Game Class.&#10;is_winner : Done" />
+    <MESSAGE value="Board class &#10;copy() : Done" />
+    <MESSAGE value="Board class &#10;is_free : Done" />
+    <MESSAGE value="Games class &#10;engage_move  : Done ( v1.0 )" />
+    <MESSAGE value="Games class &#10;get_random_move() : Done" />
+    <MESSAGE value="Games class &#10;engage_ai_move() : Done&#10;some improvements" />
+    <MESSAGE value="Games class &#10;Main LOOP : Done&#10;some improvements&#10;First run." />
+    <MESSAGE value="Board class &#10;Clear()  : Done&#10;some improvements" />
+    <MESSAGE value="Board class &#10;Redraw () : refactored" />
+    <MESSAGE value="Refactored: &#10;UI need corrections" />
+    <MESSAGE value="GAME CLASS:&#10;Loop() : Refactored with turn_exec()" />
+    <MESSAGE value="GAME CLASS:&#10;__turn_exec : Refactored" />
+    <MESSAGE value="First Demo version: 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Demo version: 0.1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-2977" y="110" key="CommitChangelistDialog2" timestamp="1604995530135">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state x="-2977" y="110" key="CommitChangelistDialog2/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604995530135" />
+    <state x="-2626" y="421" key="FileChooserDialogImpl" timestamp="1604951153928">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state x="-2626" y="421" key="FileChooserDialogImpl/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604951153928" />
+    <state width="2310" height="3" key="GridCell.Tab.0.bottom" timestamp="1604995362810">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="3" key="GridCell.Tab.0.bottom/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604995362810" />
+    <state width="2310" height="477" key="GridCell.Tab.0.bottom/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954077851" />
+    <state width="2310" height="3" key="GridCell.Tab.0.center" timestamp="1604995362809">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="3" key="GridCell.Tab.0.center/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604995362809" />
+    <state width="2310" height="477" key="GridCell.Tab.0.center/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954077849" />
+    <state width="2310" height="3" key="GridCell.Tab.0.left" timestamp="1604995362809">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="3" key="GridCell.Tab.0.left/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604995362809" />
+    <state width="2310" height="477" key="GridCell.Tab.0.left/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954077848" />
+    <state width="2310" height="3" key="GridCell.Tab.0.right" timestamp="1604995362810">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="3" key="GridCell.Tab.0.right/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604995362810" />
+    <state width="2310" height="477" key="GridCell.Tab.0.right/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954077850" />
+    <state width="2310" height="477" key="GridCell.Tab.1.bottom" timestamp="1604956297369">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="477" key="GridCell.Tab.1.bottom/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604956297369" />
+    <state width="2310" height="477" key="GridCell.Tab.1.bottom/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954139790" />
+    <state width="2310" height="477" key="GridCell.Tab.1.center" timestamp="1604956297368">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="477" key="GridCell.Tab.1.center/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604956297368" />
+    <state width="2310" height="477" key="GridCell.Tab.1.center/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954139787" />
+    <state width="2310" height="477" key="GridCell.Tab.1.left" timestamp="1604956297368">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="477" key="GridCell.Tab.1.left/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604956297368" />
+    <state width="2310" height="477" key="GridCell.Tab.1.left/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954139786" />
+    <state width="2310" height="477" key="GridCell.Tab.1.right" timestamp="1604956297369">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2310" height="477" key="GridCell.Tab.1.right/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604956297369" />
+    <state width="2310" height="477" key="GridCell.Tab.1.right/-3640.0.2560.1440/0.23.1200.1897/-1080.23.1080.1897@-3640.0.2560.1440" timestamp="1604954139789" />
+    <state x="-2860" y="388" key="Vcs.Push.Dialog.v2" timestamp="1604995538887">
+      <screen x="-3640" y="0" width="2560" height="1440" />
+    </state>
+    <state x="-2860" y="388" key="Vcs.Push.Dialog.v2/-3640.0.2560.1440/0.0.1200.1920/-1080.0.1080.1920@-3640.0.2560.1440" timestamp="1604995538887" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Tik_Tak_Toe$tiktak.coverage" NAME="tiktak Coverage Results" MODIFIED="1604992786785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

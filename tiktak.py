@@ -133,7 +133,7 @@ class Game:
 
         return self.get_random_move([2, 4, 6, 8])
 
-    def turn_exec(self, move):
+    def __turn_exec(self, move):
 
         self.set_move(move)
         if self.is_winner():
@@ -156,13 +156,11 @@ class Game:
             while self.is_playing:
                 if self.turn.human_mode:
                     self.board.redraw()
-                    move = self.engage_human_move()
-                    if not self.turn_exec(move):
+                    if not self.__turn_exec(self.engage_human_move()):
                         break
                     self.turn = self.ai_player
                 else:
-                    move = self.engage_ai_move()
-                    if not self.turn_exec(move):
+                    if not self.__turn_exec(self.engage_ai_move()):
                         break
                     self.turn = self.human_player
 

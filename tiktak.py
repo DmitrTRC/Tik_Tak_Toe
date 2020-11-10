@@ -97,7 +97,7 @@ class Game:
         return False
 
     def engage_human_move(self):
-        while (move := int(input('Your next move ( 1-9) -> '))) not in range(1, 10) or not self.board.is_free(move):
+        while (move := int(input('\nYour next move ( 1-9 ) -> '))) not in range(1, 10) or not self.board.is_free(move):
             print('Illegal move! Try again ...')
         return move
 
@@ -133,43 +133,40 @@ class Game:
 
         return self.get_random_move([2, 4, 6, 8])
 
+    def turn_exec(self, move):
+
+        self.set_move(move)
+        if self.is_winner():
+            self.board.redraw()
+            print(f'\n{self.turn.name} WON !!!')
+            self.is_playing = False
+        else:
+            if self.board.is_full():
+                self.board.redraw()
+                print('\nO-o-ops! DRAW !!!')
+                return False
+            else:
+                return True
+
     def loop(self):
         while True:
             self.turn = self.first_move()
-            print(f'{self.turn.name} moves first!')
+            print(f'\n{self.turn.name} moves first!')
             self.is_playing = True
             while self.is_playing:
                 if self.turn.human_mode:
                     self.board.redraw()
                     move = self.engage_human_move()
-                    self.set_move(move)
-                    if self.is_winner():
-                        self.board.redraw()
-                        print(f'Congrats! {self.turn.name} WON !!!')
-                        self.is_playing = False
-                    else:
-                        if self.board.is_full():
-                            self.board.redraw()
-                            print('O-o-ops! DRAW !!!')
-                            break
-                        else:
-                            self.turn = self.ai_player
+                    if not self.turn_exec(move):
+                        break
+                    self.turn = self.ai_player
                 else:
                     move = self.engage_ai_move()
-                    self.set_move(move)
-                    if self.is_winner():
-                        self.board.redraw()
-                        print(f'{self.turn.name} WON !!!')
-                        self.is_playing = False
+                    if not self.turn_exec(move):
+                        break
+                    self.turn = self.human_player
 
-                    else:
-                        if self.board.is_full():
-                            self.board.redraw()
-                            print('O-o-ops! DRAW !!!')
-                            break
-                        else:
-                            self.turn = self.human_player
-            while (choice := input('Play again ? ( y / n) ').lower()) not in ('y', 'n'):
+            while (choice := input('\nPlay again ? ( y / n) ').lower()) not in ('y', 'n'):
                 print(f'y/n possible answer.')
             if choice == 'y':
                 self.board.clear()

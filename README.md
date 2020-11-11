@@ -1,5 +1,5 @@
 # Tik_Taс_Toe
-## Tik Tak Toe game 
+## Tik Tac Toe game 
 
 ## __Rules:__
 

@@ -1,3 +1,4 @@
+import json
 import os
 import pyfiglet
 import random
@@ -51,11 +52,34 @@ class Board:
 
 class Player:
     marker = ()
+    score = {
+
+    }
 
     def __init__(self, name='Human', human_mode=True):
         self.human_mode = human_mode
         self.name = name if human_mode else 'Computer'
         self.set_mark()
+
+    def save_data(self):
+        json.dump(
+            self.score,
+            open('db/scores.json', 'w', encoding="utf-8"),
+            indent=2,
+            ensure_ascii=False,
+        )
+
+    def load_data(self):
+        try:
+            self.score = json.load(open('db/scores.json', 'r'))
+        except FileNotFoundError:
+            open('db/scores.json', 'a').close()
+
+    def save_score(self, win=0, loose=0):
+        cur_score = self.score.setdefault(self.name, [0, 0])
+        cur_score[0] += win
+        cur_score[1] += loose
+        self.score[self.name] = cur_score
 
     def set_mark(self):
         try:
@@ -74,7 +98,7 @@ class Player:
 
 class Game:
     WIN_POSITIONS = [
-        [4, 5, 6], [1, 2, 3], [7, 4, 1], [8, 5, 2], [9, 6, 3], [7, 5, 3], [9, 5, 1]
+        [4, 5, 6], [1, 2, 3], [7, 4, 1], [8, 5, 2], [9, 6, 3], [7, 5, 3], [9, 5, 1], [7, 8, 9]
     ]
 
     def __init__(self):
@@ -99,12 +123,16 @@ class Game:
         board.positions[new_position] = player.get_mark()
 
     def is_winner(self, board=None):
+        print(f'is_winner running')
         if not board:
             board = self.board
+        print(f'Board : ', board.positions)
         for combination in self.WIN_POSITIONS:
             seq = set([board.positions[item] for item in combination])
             if (len(seq) == 1) and (' ' not in seq):
+                print(f'is_winner() return True')
                 return True
+        print(f'Is_winner return False')
         return False
 
     def engage_human_move(self):
@@ -144,12 +172,20 @@ class Game:
 
         return self.get_random_move([2, 4, 6, 8])
 
+    def show_score(self):
+        for name, score in self.human_player.score.items():
+            print(f'Name: {name}            WIN: {score[0]}  LOOSE: {score[1]}')
+
     def __turn_exec(self, move):
 
         self.set_move(move)
         if self.is_winner():
             self.board.redraw()
             print(f'\n{self.turn.name} WON !!!')
+            if self.turn.human_mode:
+                self.turn.save_score(1, 0)
+            else:
+                self.turn.save_score(0, 1)
             self.is_playing = False
         else:
             if self.board.is_full():
@@ -175,6 +211,7 @@ class Game:
                         break
                     self.turn = self.human_player
 
+            self.show_score()
             while (choice := input('\nPlay again ? ( y / n) ').lower()) not in ('y', 'n'):
                 print(f'y/n possible answer.')
             if choice == 'y':
@@ -185,7 +222,9 @@ class Game:
 
 def main():
     game = Game()
+    game.human_player.load_data()
     game.loop()
+    game.human_player.save_data()
 
 
 if __name__ == '__main__':

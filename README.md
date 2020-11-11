@@ -1,4 +1,4 @@
-# Tik_Tak_Toe
+# Tik_Taс_Toe
 ## Tik Tak Toe game 
 
 ## __Rules:__
@@ -21,7 +21,7 @@ Python version > 3.8.0
 
 `pip install -r requirements.txt`
 
-`python tiktak.py`
+`python tiktaс.py`
 
 ### *__Easy way:__*
 

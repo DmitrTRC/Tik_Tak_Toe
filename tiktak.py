@@ -12,7 +12,7 @@ def game_banner():
     print(ascii_banner)
 
 
-condole = Console()
+console = Console()
 
 
 class Board:
@@ -100,6 +100,9 @@ class Game:
     WIN_POSITIONS = [
         [4, 5, 6], [1, 2, 3], [7, 4, 1], [8, 5, 2], [9, 6, 3], [7, 5, 3], [9, 5, 1], [7, 8, 9]
     ]
+    MOVEMENTS = [
+        '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    ]
 
     def __init__(self):
         game_banner()
@@ -123,22 +126,23 @@ class Game:
         board.positions[new_position] = player.get_mark()
 
     def is_winner(self, board=None):
-        print(f'is_winner running')
+        # print(f'is_winner running')
         if not board:
             board = self.board
-        print(f'Board : ', board.positions)
+        # print(f'Board : ', board.positions)
         for combination in self.WIN_POSITIONS:
             seq = set([board.positions[item] for item in combination])
             if (len(seq) == 1) and (' ' not in seq):
-                print(f'is_winner() return True')
+                # print(f'is_winner() return True')
                 return True
-        print(f'Is_winner return False')
+        # print(f'Is_winner return False')
         return False
 
     def engage_human_move(self):
-        while (move := int(input('\nYour next move ( 1-9 ) -> '))) not in range(1, 10) or not self.board.is_free(move):
+        while (move := input('\nYour next move ( 1-9 ) -> ')) not in self.MOVEMENTS or \
+                not self.board.is_free(int(move)):
             print('Illegal move! Try again ...')
-        return move
+        return int(move)
 
     def get_random_move(self, moves_arr):
         legal_moves = []
@@ -173,8 +177,10 @@ class Game:
         return self.get_random_move([2, 4, 6, 8])
 
     def show_score(self):
+        score_banner = pyfiglet.figlet_format("H I G H  S C O R E ")
+        print(score_banner)
         for name, score in self.human_player.score.items():
-            print(f'Name: {name}            WIN: {score[0]}  LOOSE: {score[1]}')
+            print(f'Name: {name:<20}    WIN: {score[0]:^}  LOOSE: {score[1]:^}')
 
     def __turn_exec(self, move):
 
@@ -183,9 +189,9 @@ class Game:
             self.board.redraw()
             print(f'\n{self.turn.name} WON !!!')
             if self.turn.human_mode:
-                self.turn.save_score(1, 0)
+                self.human_player.save_score(1, 0)
             else:
-                self.turn.save_score(0, 1)
+                self.human_player.save_score(0, 1)
             self.is_playing = False
         else:
             if self.board.is_full():
@@ -213,7 +219,7 @@ class Game:
 
             self.show_score()
             while (choice := input('\nPlay again ? ( y / n) ').lower()) not in ('y', 'n'):
-                print(f'y/n possible answer.')
+                conprint(f'y/n possible answer.')
             if choice == 'y':
                 self.board.clear()
             else:
@@ -224,6 +230,7 @@ def main():
     game = Game()
     game.human_player.load_data()
     game.loop()
+    game.board.clear_screen()
     game.human_player.save_data()
 
 

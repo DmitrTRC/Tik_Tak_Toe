@@ -2,6 +2,7 @@ import json
 import os
 import pyfiglet
 import random
+import sys
 from json.decoder import JSONDecodeError
 from rich import traceback
 from subprocess import call
@@ -234,5 +235,6 @@ def main():
 
 
 if __name__ == '__main__':
+    assert sys.version_info >= (3, 8)
     traceback.install()
     main()

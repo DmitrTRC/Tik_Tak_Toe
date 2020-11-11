@@ -7,6 +7,8 @@ Use DIGIT - keys on EXTENDED Keyboard.
 
 How to install:
 
+Python version > 3.8.0
+
 git clone https://github.com/DmitrTRC/Tik_Tak_Toe.git
 
 cd Tik_Tak_Toe

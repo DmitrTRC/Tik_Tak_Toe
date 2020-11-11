@@ -2,7 +2,6 @@ import json
 import os
 import pyfiglet
 import random
-from rich.console import Console
 from rich import traceback
 from subprocess import call
 
@@ -10,9 +9,6 @@ from subprocess import call
 def game_banner():
     ascii_banner = pyfiglet.figlet_format("Tic-Tac-Toe")
     print(ascii_banner)
-
-
-console = Console()
 
 
 class Board:
@@ -178,7 +174,7 @@ class Game:
 
     def show_score(self):
         score_banner = pyfiglet.figlet_format("H I G H  S C O R E ")
-        print(score_banner)
+        print(f'score_banner')
         for name, score in self.human_player.score.items():
             print(f'Name: {name:<20}    WIN: {score[0]:^}  LOOSE: {score[1]:^}')
 

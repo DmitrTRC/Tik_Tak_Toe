@@ -2,6 +2,7 @@ import json
 import os
 import pyfiglet
 import random
+from json.decoder import JSONDecodeError
 from rich import traceback
 from subprocess import call
 
@@ -66,10 +67,16 @@ class Player:
         )
 
     def load_data(self):
+        if not os.path.exists('db'):
+            os.makedirs('db')
+
         try:
             self.score = json.load(open('db/scores.json', 'r'))
         except FileNotFoundError:
             open('db/scores.json', 'a').close()
+        except JSONDecodeError:
+            print('Some thing wrong with score database! Repaired.')
+            open('db/scores.json', 'w').close()
 
     def save_score(self, win=0, loose=0):
         cur_score = self.score.setdefault(self.name, [0, 0])
@@ -122,16 +129,12 @@ class Game:
         board.positions[new_position] = player.get_mark()
 
     def is_winner(self, board=None):
-        # print(f'is_winner running')
         if not board:
             board = self.board
-        # print(f'Board : ', board.positions)
         for combination in self.WIN_POSITIONS:
             seq = set([board.positions[item] for item in combination])
             if (len(seq) == 1) and (' ' not in seq):
-                # print(f'is_winner() return True')
                 return True
-        # print(f'Is_winner return False')
         return False
 
     def engage_human_move(self):
@@ -215,7 +218,7 @@ class Game:
 
             self.show_score()
             while (choice := input('\nPlay again ? ( y / n) ').lower()) not in ('y', 'n'):
-                conprint(f'y/n possible answer.')
+                print(f'y/n possible answer.')
             if choice == 'y':
                 self.board.clear()
             else:

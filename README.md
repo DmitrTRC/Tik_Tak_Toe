@@ -21,7 +21,7 @@ Python version > 3.8.0
 
 `pip install -r requirements.txt`
 
-`python tiktaс.py`
+`python tiktak.py`
 
 ### *__Easy way:__*
 

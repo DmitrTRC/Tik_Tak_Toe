@@ -2,7 +2,6 @@ import json
 import os
 import pyfiglet
 import random
-import sys
 from json.decoder import JSONDecodeError
 from rich import traceback
 from subprocess import call

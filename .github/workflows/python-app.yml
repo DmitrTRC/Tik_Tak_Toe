@@ -1,4 +1,4 @@
-name: Python application
+name: Tic-Tac-Toe application
 
 on:
   push:

@@ -177,7 +177,7 @@ class Game:
 
     def show_score(self):
         score_banner = pyfiglet.figlet_format("H I G H  S C O R E ")
-        print(f'score_banner')
+        print(score_banner)
         for name, score in self.human_player.score.items():
             print(f'Name: {name:<20}    WIN: {score[0]:^}  LOOSE: {score[1]:^}')
 

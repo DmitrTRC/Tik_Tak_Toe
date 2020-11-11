@@ -235,8 +235,5 @@ def main():
 
 
 if __name__ == '__main__':
-    if sys.version_info < (3, 8, 0):
-        sys.stderr.write("You need python 3.8 or later to run this script\n")
-        exit(1)
     traceback.install()
     main()

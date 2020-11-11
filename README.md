@@ -1,11 +1,11 @@
 # Tik_Tak_Toe
-##Tik Tak Toe game 
+## Tik Tak Toe game 
 
-##Rules:
+## Rules:
 
-###Use DIGIT - keys on EXTENDED Keyboard.
+### Use DIGIT - keys on EXTENDED Keyboard.
 
-###How to install:
+### How to install:
 
 ### *__First way:__*
 

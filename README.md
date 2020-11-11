@@ -1,33 +1,33 @@
 # Tik_Tak_Toe
-Tik Tak Toe game 
+##Tik Tak Toe game 
 
-Rules:
+##Rules:
 
-Use DIGIT - keys on EXTENDED Keyboard.
+###Use DIGIT - keys on EXTENDED Keyboard.
 
-How to install:
+###How to install:
 
-First way:
+### *__First way:__*
 
 Python version > 3.8.0
 
-git clone https://github.com/DmitrTRC/Tik_Tak_Toe.git
+`git clone https://github.com/DmitrTRC/Tik_Tak_Toe.git`
 
-cd Tik_Tak_Toe
+`cd Tik_Tak_Toe`
 
-python -m venv env
+`python -m venv env`
 
-. env/bin/activate
+`. env/bin/activate`
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-python tiktak.py
+`python tiktaс.py`
 
-Easy way:
+### *__Easy way:__*
 
 if you have installed Docker simply run:
 
-docker run -i dmitrytrc/tictac
+`docker run -i dmitrytrc/tictac`
  
 
 

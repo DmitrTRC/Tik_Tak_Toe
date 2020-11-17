@@ -1,4 +1,3 @@
-[Anurag's github stats](https://github-readme-stats.vercel.app/api?username=dmitrtrc&show_icons=true&theme=radical)
 # Tik_Taс_Toe
 ## Tik Tac Toe game 
 

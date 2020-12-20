@@ -226,6 +226,7 @@ class Game:
 
 
 def main():
+    print ( 'Это просто строка !' )
     game = Game()
     game.human_player.load_data()
     game.loop()

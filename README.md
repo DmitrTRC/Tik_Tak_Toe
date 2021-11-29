@@ -3,7 +3,7 @@
 
 ## __Rules:__
 
-##### Use DIGIT - keys on EXTENDED Keyboard.
+##### Use DIGITAL - keys on EXTENDED Keyboard.
 
 ## __How to install:__
 
